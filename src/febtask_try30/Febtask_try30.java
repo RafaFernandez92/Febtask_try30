@@ -33,6 +33,24 @@ public class Febtask_try30 {
         }catch (FileNotFoundException e){
             System.out.println(e);
         }
+        
+    //public static String userNameEntry() {
+    
+        Scanner userName=new Scanner(System.in);
+        System.out.println("Insert name: ");
+        String userEntry = userName.nextLine();
+        if(userEntry.length() < 2 || userEntry.length() > 10 ){
+            System.out.println("User needs 3 letters at least. Please, try again.");
+        } else {
+            String first3 = userEntry.substring(2, 10);
+            if (!first3.matches("[0-9]+")) {
+                System.out.println("First 7 characters are not letters");
+            }
+            
+        }
+        
+      
+    }
     
     
     
@@ -40,4 +58,4 @@ public class Febtask_try30 {
     
     }
     
-}
+
