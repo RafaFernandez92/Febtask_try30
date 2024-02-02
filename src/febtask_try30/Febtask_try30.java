@@ -4,6 +4,10 @@
  */
 package febtask_try30;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
 /**
  *
  * @author User
@@ -14,7 +18,26 @@ public class Febtask_try30 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    // Reading the document    
+         
+        try{
+            Scanner readFile=new Scanner(new FileReader("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Febtask_try30\\students.txt"));
+            
+            System.out.println(readFile.nextLine());;
+            System.out.println(readFile.nextLine());
+            System.out.println(readFile.nextLine());
+            System.out.println(readFile.nextLine());
+            System.out.println(readFile.nextLine());
+            System.out.println(readFile.nextLine());
+                
+        }catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+    
+    
+    
+    
+    
     }
     
 }
