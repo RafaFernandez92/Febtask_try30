@@ -4,6 +4,7 @@
  */
 package febtask_try30;
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -36,7 +37,13 @@ public class Febtask_try30 {
         Scanner userName = new Scanner(System.in);
         System.out.println("Insert name: ");
         String userEntry = userName.nextLine();
-        
+        //Tried to create the file status.txt with BufferedWriter and to append the text input by user.
+        try {
+            BufferedWriter myWriter = new BufferedWriter(FileWriter('status.txt', true));
+        }catch(Exception e) {
+            myWriter.write(userEntry);
+        }
+        //this should have been one of the requirements for input Data
          if (userEntry.length() < 10) {
             System.out.println("Incorrect length. Please enter at least 4 characters.");
         } else {
@@ -45,12 +52,13 @@ public class Febtask_try30 {
                 System.out.println("First 7 characters cannot be numbers");
             } else {
                 String firstChars = userEntry.substring(0, 7);
-                if (!firstChars.matches("[a-zA-Z]+")) {
+                if (!firstChars.matches("[a-zA-Z]+")) { 
                     System.out.println("Well done, let's register it!");
                 } else {
-                    System.out.println("Valid PPSN!");
-                }
-            }
+                    System.out.println("Valid name, let's register");
+ // I don't know how to proceed.               
+}
+}
         }
     
         
