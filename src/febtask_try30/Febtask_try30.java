@@ -13,39 +13,51 @@ import java.util.Scanner;
  * @author User
  */
 public class Febtask_try30 {
-
+// Link to GitHub: https://github.com/RafaFernandez92/Febtask_try30
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
     // Reading the document    
-         
-        try{
-            Scanner readFile=new Scanner(new FileReader("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Febtask_try30\\students.txt"));
-            
-            System.out.println(readFile.nextLine());;
-            System.out.println(readFile.nextLine());
-            System.out.println(readFile.nextLine());
-            System.out.println(readFile.nextLine());
-            System.out.println(readFile.nextLine());
-            System.out.println(readFile.nextLine());
-                
-        }catch (FileNotFoundException e){
-            System.out.println(e);
-        }
-        
-    //public static String userNameEntry() {
-    
-        Scanner userName=new Scanner(System.in);
+// try{
+//            Scanner readFile=new Scanner(new FileReader("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Febtask_try30\\students.txt"));
+//            
+//            System.out.println(readFile.nextLine());;
+//            System.out.println(readFile.nextLine());
+//            System.out.println(readFile.nextLine());
+//            System.out.println(readFile.nextLine());
+//            System.out.println(readFile.nextLine());
+//            System.out.println(readFile.nextLine());
+//                
+//        }catch (FileNotFoundException e){
+//            System.out.println(e);
+//        }
+    //Cheking valid name
+        Scanner userName = new Scanner(System.in);
         System.out.println("Insert name: ");
         String userEntry = userName.nextLine();
-        if(userEntry.length() < 2 || userEntry.length() > 10 ){
-            System.out.println("User needs 3 letters at least. Please, try again.");
+        
+         if (userEntry.length() < 10) {
+            System.out.println("Incorrect length. Please enter at least 4 characters.");
         } else {
-            String first3 = userEntry.substring(2, 10);
-            if (!first3.matches("[0-9]+")) {
-                System.out.println("First 7 characters are not letters");
+            String first7 = userEntry.substring(0, 7);
+            if (first7.matches("[0-9]+")) {
+                System.out.println("First 7 characters cannot be numbers");
+            } else {
+                String firstChars = userEntry.substring(0, 7);
+                if (!firstChars.matches("[a-zA-Z]+")) {
+                    System.out.println("Well done, let's register it!");
+                } else {
+                    System.out.println("Valid PPSN!");
+                }
             }
+        }
+    
+        
+            System.out.println("Well done.");
+        
+            
+            
             
         }
         
